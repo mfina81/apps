@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dashboard
+  namespace: nginx-mcgw 
+spec:
+  selector:
+    app.kubernetes.io/instance: mcgw
+    app.kubernetes.io/name: nginx-mcgw
+  type: NodePort
+  ports:
+    - port: 8080
+      targetPort: 8080
