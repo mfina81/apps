@@ -115,7 +115,7 @@ controller:
   #   subPath: extra.conf
 
   ## The number of replicas of the Ingress controller deployment.
-  replicaCount: 2
+  replicaCount: 1
 
   ## A class of the Ingress controller.
 
