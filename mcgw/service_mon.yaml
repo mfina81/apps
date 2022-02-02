@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "nginxmcgw.name" . }}-mon
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "mcgw.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.servicemon.type }}
+  ports:
+    - port: {{ .Values.servicemon.port }}
+      protocol: TCP
+      name: mon
+      nodePort: {{ .Values.servicemon.nodePort }}
+      targetPort: {{ .Values.servicemon.targetPort }}
+
+  selector:
+    {{- include "mcgw.selectorLabels" . | nindent 4 }}
