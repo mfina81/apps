@@ -183,7 +183,7 @@ controller:
     type: NodePort
 
     ## The externalTrafficPolicy of the service. The value Local preserves the client source IP.
-    externalTrafficPolicy: Cluster
+    externalTrafficPolicy: Local
     #Local
 
     ## The annotations of the Ingress controller service.
